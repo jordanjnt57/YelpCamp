@@ -21,7 +21,7 @@ var commentRoutes   = require('./routes/comments')
 
 
 //mongoose.connect('mongodb://localhost:27017/yelp_camp', {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect('mongodb://Jordan:Password@yelpcamp-shard-00-00-bedot.mongodb.net:27017,yelpcamp-shard-00-01-bedot.mongodb.net:27017,yelpcamp-shard-00-02-bedot.mongodb.net:27017/yelpcamp?ssl=true&replicaSet=yelpcamp-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://Jordan:Password@yelpcamp-bedot.mongodb.net/yelpcamp?retryWrites=true&w=majority');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');     //This will automatically set the views for res.render to be of file type ejs
