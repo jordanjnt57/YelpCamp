@@ -11,6 +11,9 @@ var express         = require('express'),
     LocalStrategy   = require('passport-local'),
     User            = require('./models/user');
 
+const PORT = process.env.PORT || 3000;
+
+
 //Requiring Routes
 var commentRoutes   = require('./routes/comments')
     campgroundRoutes = require('./routes/campgrounds'),
@@ -50,6 +53,6 @@ app.use(indexRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 app.use('/campgrounds', campgroundRoutes);
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log('Yelp Camp Server has started');
 });
