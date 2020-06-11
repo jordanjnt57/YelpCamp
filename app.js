@@ -20,8 +20,7 @@ var commentRoutes   = require('./routes/comments')
     indexRoutes = require('./routes/index');
 
 
-//mongoose.connect('mongodb://localhost:27017/yelp_camp', {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect('mongodb+srv://Jordan:Password@yelpcamp-bedot.mongodb.net/yelpcamp?retryWrites=true&w=majority');
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');     //This will automatically set the views for res.render to be of file type ejs
